@@ -49,11 +49,11 @@ class EventListener
         switch ($event->getRequest()->getMethod()) {
             case Request::METHOD_POST:
             case Request::METHOD_PUT:
-                $this->userManager->updateUser($user, false);
+                $this->userManager->updateUser($user);
                 break;
 
             case Request::METHOD_DELETE:
-                $this->userManager->deleteUser($user, false);
+                $this->userManager->deleteUser($user);
                 $event->setControllerResult(null);
                 break;
         }
